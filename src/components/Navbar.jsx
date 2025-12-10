@@ -1,7 +1,9 @@
 import React, { useRef } from "react";
 
-const Navbar = () => {
+const Navbar = ({ navOpen }) => {
   const lastActiveLink = useRef();
+
+  const activeBox = useRef();
 
   const navItems = [
     {
@@ -27,7 +29,16 @@ const Navbar = () => {
     },
   ];
 
-  return <div>Navbar</div>;
+  return (
+    <nav className={"navbar" + navOpen ? "active" : ""}>
+      {navItems.map(({ label, link, className, ref }, key) => (
+        <a href={link} className={className} ref={ref} key={key} onClick={null}>
+          {label}
+        </a>
+      ))}
+      <div className="active-box" ref={activeBox}></div>
+    </nav>
+  );
 };
 
 export default Navbar;
