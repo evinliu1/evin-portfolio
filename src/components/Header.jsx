@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 
 const Header = () => {
+  const [navOpen, setNavOpen] = useState(true);
+
+  function handleSetNav() {
+    setNavOpen((navOpen) => !navOpen);
+  }
+
   return (
     <header className="fixed top-0 left-0 w-full h-20 flex items-center z-40 bg-linear-to-b from-zinc-900 to-zinc-900/0">
       <div className="max-w-screen-2xl w-full mx-auto px-4 flex justify-between items-center md:px-6">
@@ -12,10 +18,12 @@ const Header = () => {
         </h1>
 
         <div className="relative md:justify-self-center">
-          <button className="menu-btn md:hidden" onClick={null}>
-            <span className="material-symbols-rounded">menu</span>
+          <button className="menu-btn md:hidden" onClick={handleSetNav}>
+            <span className="material-symbols-rounded">
+              {navOpen ? "close" : "menu"}
+            </span>
           </button>
-          <Navbar />
+          <Navbar navOpen={navOpen} />
         </div>
 
         <a
