@@ -1,4 +1,4 @@
-import { ButtonPrimary } from "./Button";
+import { ButtonOutline, ButtonPrimary } from "./Button";
 
 const Hero = () => {
   return (
@@ -30,7 +30,11 @@ const Hero = () => {
 
           <div className="flex items-center gap-3">
             <ButtonPrimary label="Download CV" icon="download" />
-            ButtonOutine
+            <ButtonOutline
+              href="#about"
+              label="See More"
+              icon="arrow_downward"
+            />
           </div>
         </div>
 
