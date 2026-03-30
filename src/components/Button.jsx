@@ -9,7 +9,7 @@ export const ButtonPrimary = ({
 }) => {
   if (href) {
     return (
-      <a href="href" target={target} className={"btn btn-primary " + classes}>
+      <a href={href} target={target} className={"btn btn-primary " + classes}>
         {label}
         {icon ? (
           <span className="material-symbols-rounded" aria-hidden="true">
@@ -49,7 +49,7 @@ export const ButtonOutline = ({
 }) => {
   if (href) {
     return (
-      <a href="href" target={target} className={"btn btn-outline " + classes}>
+      <a href={href} target={target} className={"btn btn-outline " + classes}>
         {label}
         {icon ? (
           <span className="material-symbols-rounded" aria-hidden="true">

@@ -1,46 +1,30 @@
-import React from "react";
 import SkillCard from "./SkillCard";
 
-const skillItem = [
+const skillGroups = [
   {
-    imgSrc: "/images/figma.svg",
-    label: "Figma",
-    desc: "Design tool",
+    category: "Frontend",
+    skills: [
+      { imgSrc: "/images/react.svg", label: "React", desc: "UI Framework" },
+      { imgSrc: "/images/typescript.svg", label: "TypeScript", desc: "Type-safe JS" },
+      { imgSrc: "/images/javascript.svg", label: "JavaScript", desc: "Language" },
+      { imgSrc: "/images/tailwindcss.svg", label: "TailwindCSS", desc: "Utility CSS" },
+    ],
   },
   {
-    imgSrc: "/images/css3.svg",
-    label: "CSS",
-    desc: "User Interface",
+    category: "Backend",
+    skills: [
+      { imgSrc: "/images/python.svg", label: "Python", desc: "Scripting & Automation" },
+      { imgSrc: "/images/java.svg", label: "Java", desc: "Backend & CLI Tools" },
+      { imgSrc: "/images/nodejs.svg", label: "Node.js", desc: "JS Runtime" },
+      { imgSrc: "/images/expressjs.svg", label: "Express.js", desc: "Web Framework" },
+    ],
   },
   {
-    imgSrc: "/images/javascript.svg",
-    label: "JavaScript",
-    desc: "Interaction",
-  },
-  {
-    imgSrc: "/images/nodejs.svg",
-    label: "NodeJS",
-    desc: "Web Server",
-  },
-  {
-    imgSrc: "/images/expressjs.svg",
-    label: "ExpressJS",
-    desc: "Node Framework",
-  },
-  {
-    imgSrc: "/images/mongodb.svg",
-    label: "MongoDB",
-    desc: "Database",
-  },
-  {
-    imgSrc: "/images/react.svg",
-    label: "React",
-    desc: "Framework",
-  },
-  {
-    imgSrc: "/images/tailwindcss.svg",
-    label: "TailwindCSS",
-    desc: "User Interface",
+    category: "Data & DevOps",
+    skills: [
+      { imgSrc: "/images/mongodb.svg", label: "MongoDB", desc: "Database" },
+      { imgSrc: "/images/githubactions.svg", label: "GitHub Actions", desc: "CI/CD" },
+    ],
   },
 ];
 
@@ -48,16 +32,21 @@ const Skill = () => {
   return (
     <section className="section">
       <div className="container">
-        <h2 className="headline-2">My Tools</h2>
+        <p className="section-label">What I Work With</p>
+        <h2 className="headline-2 mb-10">Skills</h2>
 
-        <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch]">
-          Discover the arsenal of tools and technologies I use to create amazing
-          digital experiences, scalable systems, and seamless user interfaces.
-        </p>
-
-        <div className="grid gap-3 grid-cols-[repeat(auto-fill,minmax(250px,1fr))]">
-          {skillItem.map(({ imgSrc, label, desc }, key) => (
-            <SkillCard imgSrc={imgSrc} label={label} desc={desc} key={key} />
+        <div className="space-y-10">
+          {skillGroups.map(({ category, skills }) => (
+            <div key={category}>
+              <h3 className="text-zinc-500 text-xs font-semibold uppercase tracking-widest mb-4">
+                {category}
+              </h3>
+              <div className="grid gap-3 grid-cols-[repeat(auto-fill,minmax(220px,1fr))]">
+                {skills.map(({ imgSrc, label, desc }) => (
+                  <SkillCard key={label} imgSrc={imgSrc} label={label} desc={desc} />
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>

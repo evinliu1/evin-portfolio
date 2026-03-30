@@ -3,12 +3,9 @@ import PropTypes from "prop-types";
 
 const Navbar = ({ navOpen }) => {
   const lastActiveLink = useRef();
-
   const activeBox = useRef();
 
   const initActiveBox = () => {
-    console.log(lastActiveLink.current);
-    console.log(activeBox.current);
     activeBox.current.style.top = lastActiveLink.current.offsetTop + "px";
     activeBox.current.style.left = lastActiveLink.current.offsetLeft + "px";
     activeBox.current.style.width = lastActiveLink.current.offsetWidth + "px";
@@ -18,17 +15,13 @@ const Navbar = ({ navOpen }) => {
   useEffect(() => {
     initActiveBox();
     window.addEventListener("resize", initActiveBox);
-
-    return () => {
-      window.removeEventListener("resize", initActiveBox);
-    };
+    return () => window.removeEventListener("resize", initActiveBox);
   }, []);
 
   const activeCurrentLink = (event) => {
     lastActiveLink.current?.classList.remove("active");
     event.target.classList.add("active");
     lastActiveLink.current = event.target;
-
     activeBox.current.style.top = event.target.offsetTop + "px";
     activeBox.current.style.left = event.target.offsetLeft + "px";
     activeBox.current.style.width = event.target.offsetWidth + "px";
@@ -36,27 +29,11 @@ const Navbar = ({ navOpen }) => {
   };
 
   const navItems = [
-    {
-      label: "Home",
-      link: "#home",
-      className: "nav-link active",
-      ref: lastActiveLink,
-    },
-    {
-      label: "About",
-      link: "#about",
-      className: "nav-link",
-    },
-    {
-      label: "Work",
-      link: "#work",
-      className: "nav-link",
-    },
-    {
-      label: "Contact",
-      link: "#contact",
-      className: "nav-link md:hidden",
-    },
+    { label: "Home", link: "#home", className: "nav-link active", ref: lastActiveLink },
+    { label: "About", link: "#about", className: "nav-link" },
+    { label: "Experience", link: "#experience", className: "nav-link" },
+    { label: "Work", link: "#work", className: "nav-link" },
+    { label: "Contact", link: "#contact", className: "nav-link md:hidden" },
   ];
 
   return (

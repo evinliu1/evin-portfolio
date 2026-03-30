@@ -1,53 +1,80 @@
 import { ButtonOutline, ButtonPrimary } from "./Button";
 
+const impactStats = [
+  { value: "0%", label: "Customer Downtime" },
+  { value: "50%", label: "Faster Deploys" },
+  { value: "$10M+", label: "Contracts Enabled" },
+  { value: "3+", label: "Years Experience" },
+];
+
 const Hero = () => {
   return (
-    <section id="home" className="pt-28 lg:pt-36">
-      <div className="container items-center lg:grid lg:grid-cols-2 lg:gap-10">
-        <div>
-          <div className="flex items-center gap-3">
-            <figure className="img-box w-9 h-9 rounded-lg">
-              <img
-                src="/images/avatar-1.png"
-                width={40}
-                height={40}
-                alt="Evin Liu portrait"
-                className="img-cover"
-              />
-            </figure>
+    <section id="home" className="relative min-h-screen flex items-center pt-20">
+      <div className="container w-full">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-            <div className="flex items-center gap-1.5 text-zinc-400 text-sm tracking-wide">
-              <span className="relative w-2 h-2 rounded-full bg-emerald-400">
-                <span className="absolute inset-0 w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          {/* Left — text content */}
+          <div>
+            <div className="inline-flex items-center gap-2.5 bg-zinc-800/80 border border-zinc-700/50 rounded-full px-4 py-2 text-sm text-zinc-400 mb-8">
+              <span className="relative w-2 h-2 rounded-full bg-emerald-400 shrink-0">
+                <span className="absolute inset-0 rounded-full bg-emerald-400 animate-ping"></span>
               </span>
-              Atlanta, GA
+              SDE II @ CodeMettle · Suwanee, GA
+            </div>
+
+            <h1 className="headline-1 mb-4">
+              Hi, I&apos;m<br />Evin Liu.
+            </h1>
+
+            <p className="text-sky-400 text-xl font-medium mb-6 tracking-wide">
+              Software Development Engineer
+            </p>
+
+            <p className="text-zinc-400 text-lg max-w-[48ch] mb-10 leading-relaxed">
+              I build internal tooling, automation systems, and full&#8209;stack
+              applications that reduce downtime, cut integration time, and scale
+              reliably in production.
+            </p>
+
+            <div className="flex items-center gap-4 flex-wrap">
+              <ButtonPrimary
+                href="/EvinLiu_Resume.pdf"
+                target="_blank"
+                label="Download Resume"
+                icon="download"
+              />
+              <ButtonOutline href="#work" label="View Projects" icon="arrow_downward" />
+            </div>
+
+            {/* Impact stats */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-4 mt-10 pt-8 border-t border-zinc-800">
+              {impactStats.map(({ value, label }) => (
+                <div key={label}>
+                  <div className="text-xl font-bold text-zinc-50 mb-0.5">{value}</div>
+                  <div className="text-xs text-zinc-500">{label}</div>
+                </div>
+              ))}
             </div>
           </div>
 
-          <h2 className="headerline-1 max-w-[15ch] sm:max-w-[20ch] lg:max-w-[15ch] mt-5 mb-8 lg:mb-10">
-            Hi, it's Evin!
-          </h2>
+          {/* Right — photo */}
+          <div className="hidden lg:flex justify-end">
+            <div className="relative w-full max-w-[420px]">
+              {/* Sky glow behind photo */}
+              <div className="absolute inset-0 bg-sky-400/10 rounded-3xl blur-3xl scale-110 pointer-events-none"></div>
 
-          <div className="flex items-center gap-3">
-            <ButtonPrimary label="Download CV" icon="download" />
-            <ButtonOutline
-              href="#about"
-              label="See More"
-              icon="arrow_downward"
-            />
+              <figure className="relative rounded-3xl overflow-hidden ring-1 ring-zinc-700/40">
+                <img
+                  src="/images/hero-banner.jpg"
+                  alt="Evin Liu"
+                  className="w-full h-full object-cover"
+                />
+                {/* Subtle gradient at bottom to blend into page */}
+                <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-zinc-900/70 to-transparent pointer-events-none"></div>
+              </figure>
+            </div>
           </div>
-        </div>
 
-        <div className="hidden lg:block">
-          <figure className="w-full max-w-[480px] ml-auto bg-linear-to-t from-sky-400 via-25% via-sky-400/40 to-65% rounded-[60px] overflow-hidden">
-            <img
-              src="/images/hero-banner.jpg"
-              width={656}
-              height={800}
-              alt="Evin Liu"
-              className="w-full"
-            />
-          </figure>
         </div>
       </div>
     </section>
