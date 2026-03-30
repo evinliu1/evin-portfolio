@@ -66,7 +66,12 @@ const Contact = () => {
           </div>
         </div>
 
-        <form method="POST" action="" className="lg:pl-0">
+        <form
+          method="POST"
+          action="https://api.web3forms.com/submit"
+          className="lg:pl-0"
+        >
+          <input type="hidden" name="access_key" value="a17435ab-66f6-46b4-a7cc-122b5490f46e" />
           <div className="md:grid md:items-center md:grid-cols-2 md:gap-3">
             <div className="mb-4">
               <label htmlFor="name" className="label">Name</label>
