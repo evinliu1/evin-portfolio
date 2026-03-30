@@ -71,7 +71,7 @@ const Contact = () => {
           action="https://api.web3forms.com/submit"
           className="lg:pl-0"
         >
-          <input type="hidden" name="access_key" value="a17435ab-66f6-46b4-a7cc-122b5490f46e" />
+          <input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORMS_KEY} />
           <div className="md:grid md:items-center md:grid-cols-2 md:gap-3">
             <div className="mb-4">
               <label htmlFor="name" className="label">Name</label>
