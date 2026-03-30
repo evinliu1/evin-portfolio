@@ -18,7 +18,7 @@ const socialLinks = [
     ),
   },
   {
-    href: "mailto:evinliu1@gmail.com",
+    href: "#contact",
     label: "Email",
     icon: (
       <svg width="56" height="56" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -36,8 +36,8 @@ const SocialSidebar = () => {
         <a
           key={label}
           href={href}
-          target="_blank"
-          rel="noreferrer"
+          target={href.startsWith("#") ? "_self" : "_blank"}
+          rel={href.startsWith("#") ? undefined : "noreferrer"}
           aria-label={label}
           className="text-zinc-400 hover:text-sky-400 hover:-translate-y-1 transition-[color,transform] duration-200"
         >
