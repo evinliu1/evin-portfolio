@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 
 const ProjectCard = ({ imgSrc, title, subtitle, description, tags, projectLink }) => {
   return (
-    <div className="group flex flex-col rounded-2xl bg-zinc-800/40 ring-1 ring-inset ring-zinc-50/5 overflow-hidden hover:ring-zinc-50/10 hover:bg-zinc-800/60 transition-all duration-300">
-      <figure className="overflow-hidden bg-zinc-700" style={{ aspectRatio: "16/9" }}>
+    <div className="group flex flex-col rounded-2xl bg-white/60 ring-1 ring-inset ring-stone-200 overflow-hidden hover:ring-stone-300 hover:bg-white/80 transition-all duration-300">
+      <figure className="overflow-hidden bg-stone-200" style={{ aspectRatio: "16/9" }}>
         <img
           src={imgSrc}
           alt={title}
@@ -13,18 +13,18 @@ const ProjectCard = ({ imgSrc, title, subtitle, description, tags, projectLink }
       </figure>
 
       <div className="flex flex-col flex-1 p-6">
-        <p className="text-sky-400 text-xs font-semibold uppercase tracking-widest mb-1">
+        <p className="text-terra text-xs font-semibold uppercase tracking-widest mb-1">
           {subtitle}
         </p>
-        <h3 className="text-zinc-50 font-semibold text-xl mb-3">{title}</h3>
-        <p className="text-zinc-400 text-sm leading-relaxed flex-1 mb-5">{description}</p>
+        <h3 className="text-stone-800 font-semibold text-xl mb-3">{title}</h3>
+        <p className="text-stone-500 text-sm leading-relaxed flex-1 mb-5">{description}</p>
 
         <div className="flex items-center justify-between gap-3 mt-auto">
           <div className="flex flex-wrap gap-2">
             {tags.map((tag, i) => (
               <span
                 key={i}
-                className="text-xs text-zinc-500 bg-zinc-700/60 px-2.5 py-1 rounded-md"
+                className="text-xs text-stone-500 bg-stone-100 px-2.5 py-1 rounded-md"
               >
                 {tag}
               </span>
@@ -37,7 +37,7 @@ const ProjectCard = ({ imgSrc, title, subtitle, description, tags, projectLink }
               target="_blank"
               rel="noreferrer"
               aria-label={`View ${title}`}
-              className="shrink-0 w-9 h-9 rounded-lg bg-sky-400 text-zinc-950 grid place-items-center hover:bg-sky-300 transition-colors"
+              className="shrink-0 w-9 h-9 rounded-lg bg-terra text-white grid place-items-center hover:bg-terra-dark transition-colors"
             >
               <span className="material-symbols-rounded text-[18px]">arrow_outward</span>
             </a>

@@ -37,14 +37,14 @@ const Contact = () => {
           <p className="section-label">Get In Touch</p>
           <h2 className="headline-2 mb-4">Contact Me</h2>
 
-          <p className="text-zinc-400 mb-8 max-w-[40ch] leading-relaxed">
+          <p className="text-stone-500 mb-8 max-w-[40ch] leading-relaxed">
             Open to new opportunities, collaborations, or just a conversation
             about interesting engineering problems.
           </p>
 
           <a
             href="mailto:evinliu1@gmail.com"
-            className="text-zinc-300 hover:text-zinc-50 transition-colors text-sm mb-8 block"
+            className="text-stone-600 hover:text-stone-800 transition-colors text-sm mb-8 block"
           >
             evinliu1@gmail.com
           </a>
@@ -58,7 +58,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={label}
-                className="w-10 h-10 grid place-items-center text-zinc-500 ring-1 ring-inset ring-zinc-700/50 rounded-lg hover:text-zinc-50 hover:bg-zinc-800 transition-colors"
+                className="w-10 h-10 grid place-items-center text-stone-400 ring-1 ring-inset ring-stone-200 rounded-lg hover:text-stone-800 hover:bg-stone-100 transition-colors"
               >
                 {icon}
               </a>

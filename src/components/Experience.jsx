@@ -55,33 +55,33 @@ const Experience = () => {
 
         <div className="relative pl-6">
           {/* Vertical timeline line */}
-          <div className="absolute left-0 top-2 bottom-2 w-px bg-zinc-700/60"></div>
+          <div className="absolute left-0 top-2 bottom-2 w-px bg-stone-300"></div>
 
           <div className="space-y-10">
             {experiences.map(({ period, title, company, location, bullets }, i) => (
               <div key={i} className="relative">
                 {/* Timeline dot */}
-                <div className="absolute -left-[25px] top-2 w-3 h-3 rounded-full bg-sky-400 ring-4 ring-zinc-900"></div>
+                <div className="absolute -left-[25px] top-2 w-3 h-3 rounded-full bg-terra ring-4 ring-cream"></div>
 
-                <div className="bg-zinc-800/40 rounded-2xl p-6 ring-1 ring-inset ring-zinc-50/5 hover:bg-zinc-800/60 transition-colors">
+                <div className="bg-white/60 rounded-2xl p-6 ring-1 ring-inset ring-stone-200 hover:bg-white/80 transition-colors">
                   <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
                     <div>
-                      <h3 className="text-zinc-50 font-semibold text-lg leading-snug">
+                      <h3 className="text-stone-800 font-semibold text-lg leading-snug">
                         {title}
                       </h3>
-                      <p className="text-sky-400 text-sm font-medium mt-0.5">
+                      <p className="text-terra text-sm font-medium mt-0.5">
                         {company} &middot; {location}
                       </p>
                     </div>
-                    <span className="text-xs text-zinc-500 bg-zinc-800 px-3 py-1.5 rounded-full ring-1 ring-inset ring-zinc-700/50 whitespace-nowrap shrink-0">
+                    <span className="text-xs text-stone-500 bg-stone-100 px-3 py-1.5 rounded-full ring-1 ring-inset ring-stone-200 whitespace-nowrap shrink-0">
                       {period}
                     </span>
                   </div>
 
                   <ul className="space-y-2">
                     {bullets.map((bullet, j) => (
-                      <li key={j} className="flex gap-3 text-sm text-zinc-400 leading-relaxed">
-                        <span className="text-sky-400 shrink-0 mt-0.5 text-xs">▹</span>
+                      <li key={j} className="flex gap-3 text-sm text-stone-500 leading-relaxed">
+                        <span className="text-terra shrink-0 mt-0.5 text-xs">▹</span>
                         {bullet}
                       </li>
                     ))}

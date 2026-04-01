@@ -31,7 +31,7 @@ const socialLinks = [
 const SocialSidebar = () => {
   return (
     <div className="hidden xl:flex fixed left-8 bottom-0 z-40 flex-col items-center gap-4 h-screen">
-      <div className="flex-1 w-px bg-zinc-500"></div>
+      <div className="flex-1 w-px bg-stone-300"></div>
       {socialLinks.map(({ href, label, icon }) => (
         <a
           key={label}
@@ -39,12 +39,12 @@ const SocialSidebar = () => {
           target={href.startsWith("#") ? "_self" : "_blank"}
           rel={href.startsWith("#") ? undefined : "noreferrer"}
           aria-label={label}
-          className="text-zinc-400 hover:text-sky-400 hover:-translate-y-1 transition-[color,transform] duration-200"
+          className="text-stone-400 hover:text-terra hover:-translate-y-1 transition-[color,transform] duration-200"
         >
           {icon}
         </a>
       ))}
-      <div className="h-24 w-px bg-zinc-500"></div>
+      <div className="h-24 w-px bg-stone-300"></div>
     </div>
   );
 };

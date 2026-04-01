@@ -18,7 +18,7 @@ const Work = () => {
       <div className="container">
         <p className="section-label">Portfolio</p>
         <h2 className="headline-2 mb-3">Selected Work</h2>
-        <p className="text-zinc-400 mb-10 max-w-[52ch]">
+        <p className="text-stone-500 mb-10 max-w-[52ch]">
           AI-powered TikTok script generator built for creators who want real results.
         </p>
 

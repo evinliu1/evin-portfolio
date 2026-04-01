@@ -38,7 +38,7 @@ const Skill = () => {
         <div className="space-y-10">
           {skillGroups.map(({ category, skills }) => (
             <div key={category}>
-              <h3 className="text-zinc-500 text-xs font-semibold uppercase tracking-widest mb-4">
+              <h3 className="text-stone-500 text-xs font-semibold uppercase tracking-widest mb-4">
                 {category}
               </h3>
               <div className="grid gap-3 grid-cols-[repeat(auto-fill,minmax(220px,1fr))]">
