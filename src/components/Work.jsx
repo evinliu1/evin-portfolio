@@ -2,7 +2,7 @@ import ProjectCard from "./ProjectCard";
 
 const works = [
   {
-    imgSrc: "/images/scriptly-sc.jpg",
+    imgSrc: "/images/scriptly-sc.png",
     title: "Scriptly",
     subtitle: "AI Script Generator for TikTok",
     description:
