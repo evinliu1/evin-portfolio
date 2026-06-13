@@ -2,7 +2,7 @@ import ProjectCard from "./ProjectCard";
 
 const works = [
   {
-    imgSrc: "/images/project-1.jpg",
+    imgSrc: "/images/scriptly-sc.jpg",
     title: "Scriptly",
     subtitle: "AI Script Generator for TikTok",
     description:
@@ -19,7 +19,8 @@ const Work = () => {
         <p className="section-label">Portfolio</p>
         <h2 className="headline-2 mb-3">Selected Work</h2>
         <p className="text-stone-500 mb-10 max-w-[52ch]">
-          AI-powered TikTok script generator built for creators who want real results.
+          AI-powered TikTok script generator built for creators who want real
+          results.
         </p>
 
         <div className="grid gap-6 md:grid-cols-2">
